@@ -4,6 +4,7 @@
 #-SS495A hall effect sensor
 #-n/a
 #
-#STLs to print: https://www.thingiverse.com/thing:5139384
+#STLs to print:
+#               https://www.thingiverse.com/thing:5139384
 #               https://www.thingiverse.com/thing:2523343
 
