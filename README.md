@@ -12,3 +12,6 @@
   https://github.com/mathieucarbou/ESPAsyncWebServer
 
 # Use NodeMcu 1.0 as the board in Arduino IDE
+
+# Problems to resolve:
+ The showed wind speed is incorrect and it's not shown on the web page.
