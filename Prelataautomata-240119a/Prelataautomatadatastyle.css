@@ -1,0 +1,34 @@
+body {
+    background-color: #f0f0f0; /* Light gray background color */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+  }
+  
+  .container {
+    background-color: #ffffff; /* White container background color */
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px; /* Adjust as needed for spacing from the top */
+    width: 80%; /* Adjust container width */
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle effect */
+  }
+  
+  h1 {
+    color: #333333; /* Dark gray heading color */
+  }
+  
+  p {
+    color: #555555; /* Medium gray text color */
+  }
+  
+  input[type="range"] {
+    width: 80%; /* Adjust slider width */
+    margin-top: 10px;
+  }
+  
+  #thresholdValue {
+    font-weight: bold;
+    color: #007bff; /* Blue color for the threshold value */
+  }
+  
