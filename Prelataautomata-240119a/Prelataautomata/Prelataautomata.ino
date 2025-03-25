@@ -11,7 +11,7 @@ const int motorPin = D1;
 const float defaultWindSpeedThreshold = 40.0;
 float windSpeedThreshold = defaultWindSpeedThreshold;
 
-const unsigned long sampleInterval = 1000; // Interval for sampling wind speed (in milliseconds)
+const unsigned long sampleInterval = 1000;
 unsigned long lastSampleTime = 0;
 unsigned long pulseCount = 0;
 
@@ -23,7 +23,7 @@ void IRAM_ATTR handlePulse() {
 
 float calculateWindSpeed() {
   unsigned long elapsedTime = millis() - lastSampleTime;
-  float windSpeed = (float)pulseCount / (elapsedTime / 1000.0); // Convert pulses per millisecond to pulses per second
+  float windSpeed = (float)pulseCount / (elapsedTime / 1000.0);
   return windSpeed;
 }
 
@@ -47,12 +47,12 @@ String getHtmlContent(float windSpeed) {
   html += "<label for='windThreshold'>Wind Speed Tolerance:</label>";
   html += "<input type='range' id='windThreshold' name='windThreshold' min='30' max='70' value='" + String(windSpeedThreshold) + "' oninput='updateThreshold(value)'>";
   html += "<p id='thresholdValue'>Tolerance: " + String(windSpeedThreshold) + " km/h</p>";
-  html += "<button class='button' onclick='toggleMotor()'>Toggle Motor</button>"; // Add a button to toggle the motor
+  html += "<button class='button' onclick='toggleMotor()'>Toggle Motor</button>";
   html += "<p>IP Address: " + WiFi.localIP().toString() + "</p>";
   html += "</div>";
   html += "<script>";
   html += "function updateThreshold(value) { document.getElementById('thresholdValue').innerHTML = 'Tolerance: ' + value + ' km/h'; }";
-  html += "function toggleMotor() { fetch('/toggleMotor'); }"; // Send a request to /toggleMotor route when the button is clicked
+  html += "function toggleMotor() { fetch('/toggleMotor'); }";
   html += "</script></body></html>";
   return html;
 }
@@ -60,7 +60,7 @@ String getHtmlContent(float windSpeed) {
 void setup() {
   Serial.begin(115200);
 
-  pinMode(hallEffectPin, INPUT); // Use internal pull-up resistor
+  pinMode(hallEffectPin, INPUT);
   attachInterrupt(digitalPinToInterrupt(hallEffectPin), handlePulse, RISING);
 
   WiFi.begin(ssid, password);
@@ -93,10 +93,9 @@ void loop() {
   unsigned long currentTime = millis();
   if (currentTime - lastSampleTime >= sampleInterval) {
     lastSampleTime = currentTime;
-    pulseCount = 0; // Reset pulse count for next interval
+    pulseCount = 0;
   }
 
-  // Check wind speed and control motor if needed
   float windSpeed = calculateWindSpeed();
   Serial.print("Wind Speed: ");
   Serial.print(windSpeed);
