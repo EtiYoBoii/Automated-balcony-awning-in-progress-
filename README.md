@@ -2,7 +2,7 @@
   Hardware components:
   -NodeMcu ESP8266(clone)
   -SS495A hall effect sensor
-  -n/a
+  -(more to be added)
 #
 #  STLs to print:
                https://www.thingiverse.com/thing:5139384
@@ -13,5 +13,5 @@
 
 # Use NodeMcu 1.0 as the board in Arduino IDE
 
-# Problems to resolve:
- The showed wind speed is incorrect and it's not shown on the web page.
+# Problems to solve:
+ The showed wind speed is incorrect due to wrong hall effect sensor.
